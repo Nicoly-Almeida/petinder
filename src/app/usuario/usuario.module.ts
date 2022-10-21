@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 
@@ -35,6 +35,7 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     MatGridListModule,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [
     CadastroUsuarioComponent
   ]

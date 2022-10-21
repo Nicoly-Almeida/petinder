@@ -3,6 +3,7 @@ import Swal from 'sweetalert2'
 import { Pet } from 'src/app/shared/model/pet';
 import { Usuario } from 'src/app/shared/model/usuario';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
+import { PetService } from 'src/app/shared/services/pet.service';
 import { Router } from '@angular/router';
 
 
@@ -18,16 +19,23 @@ export class CadastroUsuarioComponent implements OnInit {
   usuario : Usuario;
   pet : Pet;
 
-  constructor(router: Router, private UsuarioService: UsuarioService) {
+  constructor(router: Router, private UsuarioService: UsuarioService, private PetService: PetService) {
     this.router = router;
     this.pet = new Pet('', '', '','', 0);
-    this.usuario = new Usuario('','', '', [this.pet] ,'','');
+    this.usuario = new Usuario('','', '', [] ,'','');
   }
 
   ngOnInit(): void {
   }
 
   inserir(){
+    this.PetService.inserir(this.pet).subscribe(
+      (pet) => {
+        this.usuario.pet.push(pet.id);
+        this.inserirUsuario();});
+    }
+
+  private inserirUsuario(){
     this.UsuarioService.inserir(this.usuario).subscribe(
       users => {
         Swal.fire({
@@ -39,6 +47,7 @@ export class CadastroUsuarioComponent implements OnInit {
       setTimeout(() => {
         this.router.navigate(['/listagem-pet']);
       }, 3000);
+      this.usuario = new Usuario('','', '', [] ,'','');
     },
       error => {
         Swal.fire({
@@ -48,7 +57,6 @@ export class CadastroUsuarioComponent implements OnInit {
         })
       }
       );
-    this.usuario = new Usuario('','', '', [this.pet] ,'','');
   }
-
 }
+

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
 
@@ -18,12 +17,15 @@ import { MatGridListModule } from '@angular/material/grid-list';
 
 import {HttpClientModule} from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { ListagemPetComponent } from './pet/listagem-pet/listagem-pet.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CadastroUsuarioComponent
+    CadastroUsuarioComponent,
+    ListagemPetComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { MatButtonModule } from '@angular/material/button';
     HttpClientModule,
     MatButtonModule,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
