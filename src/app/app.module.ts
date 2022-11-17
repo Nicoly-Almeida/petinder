@@ -20,6 +20,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ListagemPetComponent } from './pet/listagem-pet/listagem-pet.component';
 
+import { CommonModule } from '@angular/common';
+import {AngularFireModule} from '@angular/fire';
+import {FirebaseConfig} from '../../firestore.config';
+import {FirestoreModule} from '@angular/fire/firestore';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+
 
 @NgModule({
   declarations: [
@@ -40,9 +47,17 @@ import { ListagemPetComponent } from './pet/listagem-pet/listagem-pet.component'
     MatGridListModule,
     HttpClientModule,
     MatButtonModule,
+    CommonModule,
+   AngularFireModule.initializeApp(FirebaseConfig),
+   AngularFireModule,
+   AngularFireAuthModule,
+   AngularFireDatabaseModule
+ 
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export class FireModule { }
