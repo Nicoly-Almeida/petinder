@@ -32,7 +32,7 @@ export class CadastroUsuarioComponent implements OnInit {
     // this.PetService.inserir(this.pet).subscribe(
     //   (pet) => {
     //     this.usuario.pet.push(pet.id || '');
-    this.inserirUsuario();});
+    this.inserirUsuario();
   }
 
   private inserirUsuario(){
