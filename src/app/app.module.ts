@@ -10,7 +10,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
 
-
 import { CadastroUsuarioComponent } from './usuario/cadastro-usuario/cadastro-usuario.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -19,14 +18,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ListagemPetComponent } from './pet/listagem-pet/listagem-pet.component';
-
-import { CommonModule } from '@angular/common';
-import {AngularFireModule} from '@angular/fire';
-import {FirebaseConfig} from '../../firestore.config';
-import {FirestoreModule} from '@angular/fire/firestore';
-import {AngularFireAuthModule} from '@angular/fire/auth';
-import {AngularFireDatabaseModule} from '@angular/fire/database';
-
+import { FirestoreModule } from './firestore/firestore.module';
 
 @NgModule({
   declarations: [
@@ -47,17 +39,10 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
     MatGridListModule,
     HttpClientModule,
     MatButtonModule,
-    CommonModule,
-   AngularFireModule.initializeApp(FirebaseConfig),
-   AngularFireModule,
-   AngularFireAuthModule,
-   AngularFireDatabaseModule
- 
-
+    FirestoreModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-export class FireModule { }

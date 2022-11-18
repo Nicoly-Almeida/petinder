@@ -1,49 +1,48 @@
 import {Injectable} from '@angular/core';
 import {from, Observable} from 'rxjs';
-import {Usuario} from '../model/usuario';
+import {Pet} from '../model/pet';
 import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import {map} from 'rxjs/operators';
 
 @Injectable({
  providedIn: 'root'
 })
-export class UsuarioFirestoreService {
+export class PetFirestoreService {
 
- colecaoUsuarios: AngularFirestoreCollection<Usuario>;
- NOME_COLECAO = 'usuarios';
+ colecaoPet: AngularFirestoreCollection<Pet>;
+ NOME_COLECAO = 'pets';
 
  constructor(private afs: AngularFirestore) {
-   this.colecaoUsuarios = afs.collection(this.NOME_COLECAO);
+   this.colecaoPet = afs.collection(this.NOME_COLECAO);
  }
 
- listar(): Observable<Usuario[]> {
+ listar(): Observable<Pet[]> {
    // usando options para idField para mapear o id gerado pelo firestore para o campo id de usuário
-   return this.colecaoUsuarios.valueChanges({idField: 'id'});
+   return this.colecaoPet.valueChanges({idField: 'id'});
  }
 
- inserir(usuario: Usuario): Observable<object> {
+ inserir(pet: Pet): Observable<object> {
    // removendo id pois ele está undefined, já que um novo usuário
-   delete usuario.id;
+   delete pet.id;
    // Object.assign({}, usuario) é usado para passar um objeto json puro. Não se aceita passar um objeto customizado
    // o from transforma uma promise num Observable, para mantermos a assinatura similar ao do outro service
-   return from(this.colecaoUsuarios.add(Object.assign({}, usuario)));
+   return from(this.colecaoPet.add(Object.assign({}, pet)));
  }
 
  deletar(id: string): Observable<void> {
-   return from(this.colecaoUsuarios.doc(id).delete());
+   return from(this.colecaoPet.doc(id).delete());
  }
 
- obterPorId(id: string): Observable<Usuario> {
+ obterPorId(id: string): Observable<Pet> {
    // como o objeto retornado pelo get é um DocumentData, e não um usuário, transformamos a partir de um pipe e mapeamos de um document
    //  para o tipo usuário
-   return this.colecaoUsuarios.doc(id).get().pipe(map(document => new Usuario(document.id, document.data())));
+   return this.colecaoPet.doc(id).get().pipe(map(document => new Pet(document.id, document.data())));
  }
 
- editar(usuario: Usuario): Observable<void> {
+ editar(pet: Pet): Observable<void> {
    // removendo id pois não vamos guardar nos dados do documento, mas sim usar apenas como id para recuperar o documento
-   delete usuario.id;
-   return from(this.colecaoUsuarios.doc(usuario.id).update(Object.assign({}, usuario)));
+   delete pet.id;
+   return from(this.colecaoPet.doc(pet.id).update(Object.assign({}, pet)));
  }
 
 }
-
