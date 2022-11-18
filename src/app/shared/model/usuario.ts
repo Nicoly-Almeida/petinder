@@ -4,7 +4,7 @@ export class Usuario{
   id?: string;
   nome?: string;
   email?: string;
-  pet?: Array<string>;
+  pet?: Array<Pet>;
   senha?: string;
   repitasenha?: string;
 
