@@ -19,6 +19,16 @@
       ],
       "senha": "frgthyj",
       "repitasenha": "1245"
+    },
+    {
+      "id": 3,
+      "nome": "julyana",
+      "email": "jul@gmail.com",
+      "pet": [
+        3
+      ],
+      "senha": "1236",
+      "repitasenha": "1236"
     }
   ],
   "pet": [
@@ -28,6 +38,13 @@
       "raca": "viralata",
       "sexo": "masculino",
       "idade": "1"
+    },
+    {
+      "id": 3,
+      "nome": "bolinha",
+      "raca": "pug",
+      "sexo": "masculino",
+      "idade": "5"
     }
   ]
 }
