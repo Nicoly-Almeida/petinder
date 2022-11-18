@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 import { Pet } from 'src/app/shared/model/pet';
 import { Usuario } from 'src/app/shared/model/usuario';
 import { UsuarioFirestoreService } from 'src/app/shared/services/usuario-firestore.service';
-import { PetService } from 'src/app/shared/services/pet.service';
+import { PetFirestoreService } from 'src/app/shared/services/pet-firestore.service';
 import { Router } from '@angular/router';
 
 
@@ -19,7 +19,7 @@ export class CadastroUsuarioComponent implements OnInit {
   usuario : Usuario;
   pet : Pet;
 
-  constructor(router: Router, private UsuarioService: UsuarioFirestoreService, private PetService: PetService) {
+  constructor(router: Router, private UsuarioService: UsuarioFirestoreService, private PetService: PetFirestoreService) {
     this.router = router;
     this.pet = new Pet('', {});
     this.usuario = new Usuario('', {});
@@ -28,12 +28,15 @@ export class CadastroUsuarioComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //erro pois nao consigo passar o pet pra o usuario
+  //como corrigir?
   inserir(){
     this.PetService.inserir(this.pet).subscribe(
       (pet) => {
-        this.usuario.pet?.push(pet.id || '');
+        this.usuario.pet?.push('');
         this.inserirUsuario();
       })
+      this.inserirUsuario();
   }
 
   private inserirUsuario(){
