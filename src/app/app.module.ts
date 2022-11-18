@@ -10,7 +10,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
 
-
 import { CadastroUsuarioComponent } from './usuario/cadastro-usuario/cadastro-usuario.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -19,7 +18,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ListagemPetComponent } from './pet/listagem-pet/listagem-pet.component';
-
+import { FirestoreModule } from './firestore/firestore.module';
 
 @NgModule({
   declarations: [
@@ -40,6 +39,7 @@ import { ListagemPetComponent } from './pet/listagem-pet/listagem-pet.component'
     MatGridListModule,
     HttpClientModule,
     MatButtonModule,
+    FirestoreModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

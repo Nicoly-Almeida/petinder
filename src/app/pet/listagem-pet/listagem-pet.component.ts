@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pet } from 'src/app/shared/model/pet';
-import { PetService } from 'src/app/shared/services/pet.service';
+import { PetFirestoreService } from 'src/app/shared/services/pet-firestore.service';
 
 @Component({
   selector: 'app-listagem-pet',
@@ -10,7 +10,7 @@ import { PetService } from 'src/app/shared/services/pet.service';
 export class ListagemPetComponent implements OnInit {
   pets: Pet[];
 
-  constructor(private petService: PetService) {
+  constructor(private petService: PetFirestoreService) {
     this.pets = new Array<Pet>();
   }
   ngOnInit(): void {
@@ -20,7 +20,7 @@ export class ListagemPetComponent implements OnInit {
   }
 
   deletar(pet: Pet): void {
-    this.petService.deletar(pet.id).subscribe(
+    this.petService.deletar(pet.id || '').subscribe(
       () => {
         this.pets = this.pets.filter(p => p.id !== pet.id)
       }

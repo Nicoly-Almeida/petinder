@@ -1,19 +1,19 @@
 import { Pet }  from './pet';
 
 export class Usuario{
-  id: string;
-  nome: string;
-  email: string;
-  pet: Array<string>;
-  senha: string;
-  repitasenha: string;
+  id?: string;
+  nome?: string;
+  email?: string;
+  pet?: Array<string>;
+  senha?: string;
+  repitasenha?: string;
 
-  constructor(id : string, nome: string, email: string, pet: Array<string>, senha: string, repetsenha: string ) {
+  constructor(id?: string, usuario: Usuario = {}) {
     this.id = id;
-    this.nome = nome;
-    this.email = email;
-    this.pet = pet;
-    this.senha = senha;
-    this.repitasenha = repetsenha;
+    this.nome = usuario.nome;
+    this.email = usuario.email;
+    this.pet = usuario.pet;
+    this.senha = usuario.senha;
+    this.repitasenha = usuario.repitasenha;
   }
 }
