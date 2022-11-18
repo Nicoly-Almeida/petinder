@@ -29,11 +29,11 @@ export class CadastroUsuarioComponent implements OnInit {
   }
 
   inserir(){
-    this.PetService.inserir(this.pet).subscribe(
-      (pet) => {
-        this.usuario.pet.push(pet.id || '');
-        this.inserirUsuario();});
-    }
+    // this.PetService.inserir(this.pet).subscribe(
+    //   (pet) => {
+    //     this.usuario.pet.push(pet.id || '');
+    //     this.inserirUsuario();});
+  }
 
   private inserirUsuario(){
     this.UsuarioService.inserir(this.usuario).subscribe(
