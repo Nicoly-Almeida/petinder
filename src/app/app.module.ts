@@ -19,12 +19,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ListagemPetComponent } from './pet/listagem-pet/listagem-pet.component';
 import { FirestoreModule } from './firestore/firestore.module';
+import { LoginFormComponent } from './core/authentication/login-form/login-form.component';
+import { CadastroPetComponent } from './pet/cadastro-pet/cadastro-pet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CadastroUsuarioComponent,
-    ListagemPetComponent
+    ListagemPetComponent,
+    LoginFormComponent,
+    CadastroPetComponent
   ],
   imports: [
     BrowserModule,

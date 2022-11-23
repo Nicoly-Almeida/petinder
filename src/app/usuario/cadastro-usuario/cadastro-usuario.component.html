@@ -11,22 +11,6 @@
           <mat-label>Email</mat-label>
           <input matInput [(ngModel)]="usuario.email" name="email">
         </mat-form-field>
-        <mat-form-field  >
-          <mat-label>Nome do pet</mat-label>
-          <input matInput [(ngModel)]="pet.nome" name="nomepet"><br>
-        </mat-form-field>
-        <mat-form-field  class="col-4">
-          <mat-label>Raça</mat-label>
-          <input matInput [(ngModel)]="pet.raca" name="raca"><br>
-        </mat-form-field>
-        <mat-form-field  class="col-4">
-          <mat-label>Idade</mat-label>
-          <input matInput [(ngModel)]="pet.idade" name="idade"><br>
-        </mat-form-field>
-        <mat-form-field  class="col-4">
-          <mat-label>Sexo</mat-label>
-          <input matInput [(ngModel)]="pet.sexo" name="sexo"><br>
-        </mat-form-field>
         <mat-form-field  class="col">
           <mat-label>Senha</mat-label>
           <input matInput [(ngModel)]="usuario.senha" name="senha"><br>
@@ -38,7 +22,7 @@
 
       </form>
       <div class="d-flex justify-content-center mt-4">
-        <button class="botao center px-5" mat-raised-button color="primary" (click)="inserir()">Cadastrar</button>
+        <button class="botao center px-5" mat-raised-button color="primary" (click)="inserirUsuario()">Cadastrar</button>
       </div>
     </div>
     <div class="col-5">

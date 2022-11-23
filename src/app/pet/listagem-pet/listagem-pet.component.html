@@ -1,7 +1,15 @@
 <div class="background">
   <div class="container">
-  <p class="cadastro pt-5">Seus AUmores</p>
-    <div class="row">
+    <div class="row pt-5">
+      <div class="col-6">
+        <p class="cadastro mb-0">Seus AUmores</p>
+      </div>
+      <div class="col-6 d-flex justify-content-end">
+        <button mat-raised-button (click)="cadastrar()">Adicionar Pet</button>
+      </div>
+    </div>
+
+    <div class="row mt-5">
       <div class="col-3" *ngFor="let pet of pets">
         <mat-card class="example-card">
           <mat-card-header>
