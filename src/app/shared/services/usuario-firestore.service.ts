@@ -24,6 +24,7 @@ export class UsuarioFirestoreService {
  inserir(usuario: Usuario): Observable<object> {
    // removendo id pois ele está undefined, já que um novo usuário
    delete usuario.id;
+   
    // Object.assign({}, usuario) é usado para passar um objeto json puro. Não se aceita passar um objeto customizado
    // o from transforma uma promise num Observable, para mantermos a assinatura similar ao do outro service
    return from(this.colecaoUsuarios.add(Object.assign({}, usuario)));
