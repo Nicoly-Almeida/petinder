@@ -25,8 +25,6 @@ export class CadastroPetComponent implements OnInit {
 
 
   inserirPet(){
-    
-    this.pet.usuario = JSON.parse(localStorage.getItem('usuario') || '');
     this.PetService.inserir(this.pet).subscribe(
       pets => {
         Swal.fire({
