@@ -6,15 +6,28 @@
   height: 100%;
 }
 
+.center{
+  text-align: center;
+}
+
 .cadastro{
   font-family: 'Montserrat';
   font-style: normal;
-  font-weight: 800;
-  font-size: 30px;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 73px;
   color: #8A3A00;
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
+.botao{
+  background-color: #B44B00;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 48px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline{
+  background-color: white !important
 }

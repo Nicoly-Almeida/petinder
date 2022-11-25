@@ -17,11 +17,9 @@ export class CadastroUsuarioComponent implements OnInit {
   router: Router;
 
   usuario : Usuario;
-  pet : Pet;
 
   constructor(router: Router, private UsuarioService: UsuarioFirestoreService, private PetService: PetFirestoreService) {
     this.router = router;
-    this.pet = new Pet('', {});
     this.usuario = new Usuario('', {});
   }
 
@@ -30,16 +28,8 @@ export class CadastroUsuarioComponent implements OnInit {
 
   //erro pois nao consigo passar o pet pra o usuario
   //como corrigir?
-  inserir(){
-    this.PetService.inserir(this.pet).subscribe(
-      (pet) => {
-        this.usuario.pet?.push('');
-        this.inserirUsuario();
-      })
-      this.inserirUsuario();
-  }
 
-  private inserirUsuario(){
+  inserirUsuario(){
     this.UsuarioService.inserir(this.usuario).subscribe(
       users => {
         Swal.fire({

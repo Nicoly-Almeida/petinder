@@ -7,27 +7,19 @@ import { ListagemPetComponent } from './listagem-pet/listagem-pet.component';
 import {MatCardHarness} from '@angular/material/card/testing';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material/icon';
-import {MatBadgeModule} from '@angular/material/badge';
-import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import { MatCardModule } from '@angular/material/card';
+import { CadastroPetComponent } from './cadastro-pet/cadastro-pet.component';
+import { MaterialModule } from '../shared/material/material.module';
 
 @NgModule({
   declarations: [
     ListagemPetComponent,
+    CadastroPetComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatIconModule,
-    MatBadgeModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatCardModule,
+    MaterialModule,
     MatCardHarness,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

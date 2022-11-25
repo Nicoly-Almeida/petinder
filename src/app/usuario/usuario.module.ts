@@ -4,16 +4,10 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
 
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
-import {MatIconModule} from '@angular/material/icon';
-import {MatBadgeModule} from '@angular/material/badge';
-import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatGridListModule} from '@angular/material/grid-list';
 
 import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
+import { MaterialModule } from '../shared/material/material.module';
 
 
 
@@ -25,15 +19,9 @@ import {HttpClientModule} from '@angular/common/http';
     CommonModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatCardModule,
-    MatIconModule,
-    MatBadgeModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
     RouterModule,
     HttpClientModule,
-    MatGridListModule,
+    MaterialModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [
