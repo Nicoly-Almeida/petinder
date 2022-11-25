@@ -23,12 +23,12 @@ export class CadastroPetComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //erro pois nao consigo passar o pet pra o usuario
-  //como corrigir?
 
-  inserirUsuario(){
+  inserirPet(){
+    
+    this.pet.usuario = JSON.parse(localStorage.getItem('usuario') || '');
     this.PetService.inserir(this.pet).subscribe(
-      users => {
+      pets => {
         Swal.fire({
         icon: 'success',
         title: 'Usuário cadastrado com sucesso!',

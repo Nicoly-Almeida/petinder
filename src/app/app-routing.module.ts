@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import  { CadastroUsuarioComponent } from './usuario/cadastro-usuario/cadastro-usuario.component';
 import { ListagemPetComponent } from './pet/listagem-pet/listagem-pet.component';
 import { CadastroPetComponent } from './pet/cadastro-pet/cadastro-pet.component';
+import { LoginFormComponent } from './core/authentication/login-form/login-form.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'listagem-pet',
     component: ListagemPetComponent
+  },
+  {
+    path: 'login',
+    component: LoginFormComponent
   }
 ];
 
