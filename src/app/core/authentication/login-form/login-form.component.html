@@ -19,7 +19,7 @@
                   </button>
                   <mat-error *ngIf="login.senha.invalid">{{getErrorSenhaMessage()}}</mat-error>
               </mat-form-field>
-              <p >Ainda não possui uma conta?        <span class="ml-5">Cadastre-se</span></p>
+              <p routerLink="/cadastro-usuario" style="cursor:pointer">Ainda não possui uma conta?        <span class="ml-5">Cadastre-se</span></p>
               <button mat-flat-button class="primary_button w-100" (click)="auth()" type="submit" [disabled]="!formValid()">Entrar</button>
           </form>
       </div>

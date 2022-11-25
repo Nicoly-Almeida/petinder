@@ -29,7 +29,7 @@ export class CadastroPetComponent implements OnInit {
       pets => {
         Swal.fire({
         icon: 'success',
-        title: 'Usuário cadastrado com sucesso!',
+        title: 'Pet cadastrado com sucesso!',
         showConfirmButton: false,
         timer: 3000
       })
