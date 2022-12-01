@@ -21,6 +21,8 @@ export class PetFirestoreService {
    return this.colecaoPet.valueChanges({idField: 'id'});
  }
 
+
+
  inserir(pet: Pet): Observable<object> {
    // removendo id pois ele está undefined, já que um novo usuário
    delete pet.id;
